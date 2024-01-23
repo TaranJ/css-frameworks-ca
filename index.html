@@ -4,28 +4,40 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pawfinity | login</title>
-    <!-- <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" /> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,300;0,400;0,600;1,100;1,300;1,400;1,600&family=Just+Another+Hand&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="dist/css/styles.css" />
   </head>
-  <body class="bg" style="background-image: url('/images/dog-8468288_1920.jpg'); background-position-x: center">
-    <header class="d-flex justify-content-center p-3 bg-primary">
-      <img src="/images/Ellipse 1.png" alt="simple illustration of a dog" />
-      <h1 class="text-white">Pawfinity</h1>
+  <body class="bg h-100" style="background-image: url('/images/dog-8468288_1920.jpg'); background-position-x: center; background-position-y: 20%">
+    <header class="d-flex justify-content-center p-1 bg-primary">
+      <img src="/images/Ellipse 1.png" alt="illustration of a dog" />
+      <h1 class="text-white text-lowercase display-1 ps-1 pt-2 align-self-center">Pawfinity</h1>
     </header>
     <main class="d-flex justify-content-center">
-      <section class="container">
-        <div class="row">
-          <input type="text" class="col-12" />
-          <input type="text" class="col-12" />
-          <button>Login</button>>
+      <section class="container p-4 pt-5 mt-5 m-3">
+        <div class="container row d-flex gap-4 justify-content-center p-0 pb-5">
+          <div class="row justify-content-center p-0">
+            <input type="text" class="col-12 col-lg-4 p-2 opacity-50" id="username" placeholder="email or username" />
+            <label for="username" class="d-none">email or username</label>
+          </div>
+          <div class="row justify-content-center p-0">
+            <input type="text" class="col-12 col-lg-4 p-2 opacity-50" id="password" placeholder="password" />
+            <label for="password" class="d-none">password</label>
+          </div>
+
+          <button class="p-2 bg-primary text-white text-uppercase h4 rounded-pill border-0 col-lg-4">Login</button>
         </div>
-        <div class="row text-white">
-          <div class="d-flex">
+        <div class="row text-white text-uppercase justify-content-center col-12 pt-5">
+          <div class="d-flex pt-3 pb-3 ps-0 pe-0 col-lg-10 justify-content-center">
             <hr class="col-5" />
-            <h2 class="col-2 text-center">or</h2>
+            <h2 class="col-2 text-center h4">or</h2>
             <hr class="col-5" />
           </div>
-          <button>Sign up</button>
+          <button class="p-2 text-white bg-secondary text-uppercase h4 rounded-pill border-0 col-lg-4">Sign up</button>
         </div>
       </section>
     </main>
