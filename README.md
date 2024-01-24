@@ -1,15 +1,15 @@
 # css-frameworks-ca
 
-# Pawfinity
+## Pawfinity
 
 ![image](https://cdn.pixabay.com/photo/2023/12/25/10/27/dog-8468288_640.jpg)
 
-## Description
+### Description
 
 Social media app for pets.
 
-## Built With
+### Built With
 
 - HTML
 - SCSS
-- Bootstrap
+- Bootstrap v5.3.2

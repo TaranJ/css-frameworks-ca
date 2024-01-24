@@ -3,6 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Pawfinity: Your pet's social playground! Connect, share, and celebrate with fellow pet lovers. The perfect space for wagging tails and endless smiles. Join the fun now!"
+    />
     <title>Pawfinity | login</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -12,25 +16,25 @@
     />
     <link rel="stylesheet" href="dist/css/styles.css" />
   </head>
-  <body class="bg h-100" style="background-image: url('/images/dog-8468288_1920.jpg'); background-position-x: center; background-position-y: 20%">
+  <body class="login-bg h-100 bg-primary">
     <header class="d-flex justify-content-center p-1 bg-primary">
       <img src="/images/Ellipse 1.png" alt="illustration of a dog" />
-      <h1 class="text-white text-lowercase display-1 ps-1 pt-2 align-self-center">Pawfinity</h1>
+      <h1 class="text-white text-lowercase display-1 ps-1 pt-2 align-self-center" style="font-family: 'Just Another Hand', cursive">Pawfinity</h1>
     </header>
     <main class="d-flex justify-content-center">
       <section class="container p-4 pt-5 mt-5 m-3">
-        <div class="container row d-flex gap-4 justify-content-center p-0 pb-5">
+        <form action="/profile/index.html" class="container row d-flex gap-4 justify-content-center p-0 pb-5">
           <div class="row justify-content-center p-0">
-            <input type="text" class="col-12 col-lg-4 p-2 opacity-50" id="username" placeholder="email or username" />
+            <input type="text" class="col-12 col-lg-4 p-2 opacity-50" id="username" required placeholder="email or username" />
             <label for="username" class="d-none">email or username</label>
           </div>
           <div class="row justify-content-center p-0">
-            <input type="text" class="col-12 col-lg-4 p-2 opacity-50" id="password" placeholder="password" />
+            <input type="text" class="col-12 col-lg-4 p-2 opacity-50" id="password" required minlength="8" placeholder="password" />
             <label for="password" class="d-none">password</label>
           </div>
 
           <button class="p-2 bg-primary text-white text-uppercase h4 rounded-pill border-0 col-lg-4">Login</button>
-        </div>
+        </form>
         <div class="row text-white text-uppercase justify-content-center col-12 pt-5">
           <div class="d-flex pt-3 pb-3 ps-0 pe-0 col-lg-10 justify-content-center">
             <hr class="col-5" />
