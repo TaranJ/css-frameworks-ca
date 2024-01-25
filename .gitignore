@@ -1,5 +1,2 @@
 node_modules/
 .DS_Store
-dist/css/images.css
-dist/css/index.css
-dist/css/posts.css
