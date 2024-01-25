@@ -23,25 +23,29 @@
     </header>
     <main class="d-flex justify-content-center">
       <section class="container p-4 pt-5 mt-5 m-3">
-        <form action="/profile/index.html" class="container row d-flex gap-4 justify-content-center p-0 pb-5">
+        <!-- login -->
+        <form action="/profile/index.html" class="row gap-4 justify-content-center p-0 pb-5">
+          <!-- username -->
           <div class="row justify-content-center p-0">
-            <input type="text" class="col-12 col-lg-4 p-2 opacity-50" id="username" required placeholder="email or username" />
-            <label for="username" class="d-none">email or username</label>
+            <input type="text" class="col-lg-4 p-2 opacity-50" id="username" required placeholder="email or username" />
           </div>
+          <!-- password -->
           <div class="row justify-content-center p-0">
-            <input type="text" class="col-12 col-lg-4 p-2 opacity-50" id="password" required minlength="8" placeholder="password" />
-            <label for="password" class="d-none">password</label>
+            <input type="text" class="col-lg-4 p-2 opacity-50" id="password" required minlength="8" placeholder="password" />
           </div>
-
           <button class="p-2 bg-primary text-white text-uppercase h4 rounded-pill border-0 col-lg-4">Login</button>
         </form>
-        <div class="row text-white text-uppercase justify-content-center col-12 pt-5">
-          <div class="d-flex pt-3 pb-3 ps-0 pe-0 col-lg-10 justify-content-center">
+        <!-- separator -->
+        <div class="row text-white text-uppercase justify-content-center pt-5">
+          <div class="d-flex pt-3 pb-3 col-lg-4">
             <hr class="col-5" />
             <h2 class="col-2 text-center h4">or</h2>
             <hr class="col-5" />
           </div>
-          <button class="p-2 text-white bg-secondary text-uppercase h4 rounded-pill border-0 col-lg-4">Sign up</button>
+        </div>
+        <!-- sign up button -->
+        <div class="row justify-content-center">
+          <button class="col-12 col-lg-4 p-2 text-white bg-secondary text-uppercase h4 rounded-pill border-0">Sign up</button>
         </div>
       </section>
     </main>

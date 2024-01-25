@@ -4,6 +4,14 @@
   object-fit: cover;
 }
 
+.profile-thumbnail {
+  object-fit: cover;
+  height: 35px;
+  width: 35px;
+  @extend .border;
+  @extend .border-dark;
+}
+
 .post-thumbnail {
   object-fit: cover;
   height: 200px;

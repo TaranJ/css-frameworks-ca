@@ -1,24 +1,18 @@
-.profile-main {
-  max-width: 200px;
-  max-height: 200px;
-  object-fit: cover;
-}
+/* Error: The target selector was not found.
+ * Use "@extend .border !optional" to avoid this error.
+ *    ,
+ * 11 |   @extend .border;
+ *    |   ^^^^^^^^^^^^^^^
+ *    '
+ *   src\scss\images.scss 11:3  root stylesheet */
 
-.post-thumbnail {
-  object-fit: cover;
-  height: 200px;
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: 'Error: The target selector was not found.\aUse "@extend .border !optional" to avoid this error.\a    \2577 \a 11 \2502    @extend .border;\d\a    \2502    ^^^^^^^^^^^^^^^\a    \2575 \a   src\\scss\\images.scss 11:3  root stylesheet';
 }
-
-@media (max-width: 575px) {
-  .post-thumbnail {
-    height: auto;
-  }
-}
-.login-bg {
-  background-image: url("/images/dog-8468288_1920.jpg");
-  background-position-x: center;
-  background-position-y: 20%;
-  background-repeat: no-repeat;
-}
-
-/*# sourceMappingURL=images.css.map */

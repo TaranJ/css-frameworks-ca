@@ -5,6 +5,12 @@
   object-fit: cover;
 }
 
+.profile-thumbnail {
+  object-fit: cover;
+  height: 35px;
+  width: 35px;
+}
+
 .post-thumbnail {
   object-fit: cover;
   height: 200px;
@@ -20,10 +26,6 @@
   background-position-x: center;
   background-position-y: 20%;
   background-repeat: no-repeat;
-}
-
-.text-logo {
-  font-family: "Just Another Hand", cursive;
 }
 
 /*!
@@ -98,7 +100,7 @@
   --bs-dark-border-subtle: #adb5bd;
   --bs-white-rgb: 255, 255, 255;
   --bs-black-rgb: 0, 0, 0;
-  --bs-font-sans-serif: "Barlow Condensed", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
   --bs-body-font-family: var(--bs-font-sans-serif);
@@ -7407,7 +7409,7 @@ textarea.form-control-lg {
   transform: translateY(-50%) !important;
 }
 
-.border {
+.border, .profile-thumbnail {
   border: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
 }
 
@@ -7482,7 +7484,7 @@ textarea.form-control-lg {
   border-color: rgba(var(--bs-light-rgb), var(--bs-border-opacity)) !important;
 }
 
-.border-dark {
+.border-dark, .profile-thumbnail {
   --bs-border-opacity: 1;
   border-color: rgba(var(--bs-dark-rgb), var(--bs-border-opacity)) !important;
 }
@@ -11881,6 +11883,13 @@ textarea.form-control-lg {
   .d-print-none {
     display: none !important;
   }
+}
+.text-logo {
+  font-family: "Just Another Hand", cursive;
+}
+
+.fs-7 {
+  font-size: 0.75rem;
 }
 
 /*# sourceMappingURL=styles.css.map */
