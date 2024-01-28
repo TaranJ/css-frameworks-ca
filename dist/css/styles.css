@@ -28,6 +28,11 @@
   background-repeat: no-repeat;
 }
 
+@media (max-width: 991px) {
+  .home-icon {
+    display: none;
+  }
+}
 .text-logo {
   font-family: "Just Another Hand", cursive;
 }
