@@ -1,0 +1,31 @@
+.profile-main {
+  max-width: 200px;
+  max-height: 200px;
+  object-fit: cover;
+}
+
+.profile-thumbnail {
+  object-fit: cover;
+  height: 35px;
+  width: 35px;
+  @extend .border;
+  @extend .border-dark;
+}
+
+.post-thumbnail {
+  object-fit: cover;
+  height: 200px;
+}
+
+@media (max-width: 575px) {
+  .post-thumbnail {
+    height: auto;
+  }
+}
+
+.login-bg {
+  background-image: url("/images/dog-8468288_1920.jpg");
+  background-position-x: center;
+  background-position-y: 20%;
+  background-repeat: no-repeat;
+}

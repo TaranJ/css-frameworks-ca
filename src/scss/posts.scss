@@ -1,0 +1,11 @@
+.post {
+  @extend .d-flex;
+  @extend .flex-column;
+  @extend .col-12;
+  @extend .col-sm-6;
+  @extend .col-lg-3;
+  @extend .p-0;
+  @extend .ps-sm-2;
+  @extend .pe-sm-2;
+  @extend .p-lg-1;
+}
