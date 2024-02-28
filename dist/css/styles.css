@@ -37,6 +37,19 @@
   font-family: "Just Another Hand", cursive;
 }
 
+.register-form {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 200ms ease-in-out;
+  z-index: 10;
+}
+
+.register-form.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+
 /*!
  * Bootstrap  v5.3.2 (https://getbootstrap.com/)
  * Copyright 2011-2023 The Bootstrap Authors

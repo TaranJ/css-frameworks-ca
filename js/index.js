@@ -1,1 +1,3 @@
-// get API
+import { homePage } from "./home.js";
+
+homePage();
