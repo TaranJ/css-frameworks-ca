@@ -1,3 +1,4 @@
+import { registerOK, errSignup } from "../../ui/constants.js";
 import { APIBase, registerURL } from "../constants.js";
 import { getPosts } from "../fetch.js";
 
@@ -12,9 +13,15 @@ export async function register(name, email, password) {
   });
 
   if (response.ok) {
+    document.getElementById("registerForm").reset();
+    registerOK.classList.remove("d-none");
     return await response.json();
+  } else if (response.status === 400) {
+    errSignup.classList.remove("d-none");
+    throw new Error("Only stud.noroff.no emails are allowed to register");
+  } else {
+    throw new Error("could not register the account");
   }
-  throw new Error("could not register the account");
 }
 
 export async function onRegister(event) {

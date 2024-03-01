@@ -14,6 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,300;0,400;0,600;1,100;1,300;1,400;1,600&family=Just+Another+Hand&display=swap"
       rel="stylesheet"
     />
+    <script src="https://kit.fontawesome.com/2e065d1207.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="dist/css/styles.css" />
   </head>
   <body class="login-bg h-100 bg-primary">
@@ -21,7 +22,7 @@
       <img src="/images/Ellipse 1.png" alt="cartoon illustration of a dog" class="img-fluid" />
       <h1 class="text-white text-lowercase text-logo display-1 ps-1 pt-2 align-self-center">Pawfinity</h1>
     </header>
-    <main class="d-flex justify-content-center">
+    <main class="d-flex justify-content-center container">
       <section class="container p-4 pt-5 mt-5 m-3">
         <!-- login -->
         <form action="/profile/index.html" class="row gap-4 justify-content-center p-0 pb-5" id="loginForm">
@@ -32,6 +33,9 @@
           <!-- password -->
           <div class="row justify-content-center p-0">
             <input type="password" class="col-lg-4 p-2 opacity-50" id="password" name="password" required minlength="8" placeholder="password" />
+          </div>
+          <div class="row justify-content-center p-0 d-none" id="login-error">
+            <div class="form-error bg-danger border col-lg-4">Invalid username or password. Please try again.</div>
           </div>
           <button class="p-2 bg-primary text-white text-uppercase h4 rounded-pill border-0 col-lg-4">Login</button>
         </form>
@@ -48,32 +52,35 @@
           <button class="col-12 col-lg-4 p-2 text-white bg-secondary text-uppercase h4 rounded-pill border-0" id="signup-button">Sign up</button>
         </div>
       </section>
-      <div class="register-form bg-secondary p-5">
-        <button class="close">X</button>
-        <form class="row gap-4 justify-content-center p-0 pb-5" id="registerForm">
-          <!-- username -->
-          <div class="row justify-content-center p-0">
-            <input type="text" class="col-lg-4 p-2 opacity-50" id="signup-username" name="name" required placeholder="username" />
-          </div>
-          <!-- email -->
-          <div class="row justify-content-center p-0">
-            <input type="text" class="col-lg-4 p-2 opacity-50" id="signup-email" name="email" required placeholder="email" />
-          </div>
-          <!-- password -->
-          <div class="row justify-content-center p-0">
-            <input
-              type="password"
-              class="col-lg-4 p-2 opacity-50"
-              id="signup-password"
-              required
-              minlength="8"
-              name="password"
-              placeholder="password"
-            />
-          </div>
-          <button class="p-2 bg-primary text-white text-uppercase h4 rounded-pill border-0 col-lg-4">Sign up</button>
-        </form>
-      </div>
+      <!-- sign up modal -->
+      <section class="register-form bg-light border border-2 container">
+        <div class="d-flex justify-content-end">
+          <button class="close p-0 h2 border-0 bg-light text-white"><i class="fa-solid fa-x fa-2xs"></i></button>
+        </div>
+        <div class="row justify-content-center pb-3">
+          <h2 class="p-0 text-white text-uppercase text-center">Join Pawfinity</h2>
+          <hr class="text-white col-11" />
+          <form class="col-lg-8 row gap-4 p-5 justify-content-center" id="registerForm">
+            <!-- username -->
+            <div class="row justify-content-center p-0">
+              <input type="text" class="col p-2" id="signup-username" name="name" required placeholder="username" />
+            </div>
+            <!-- email -->
+            <div class="row justify-content-center p-0">
+              <input type="text" class="col p-2" id="signup-email" name="email" required placeholder="email" />
+            </div>
+            <!-- password -->
+            <div class="row justify-content-center p-0">
+              <input type="password" class="col p-2" id="signup-password" required minlength="8" name="password" placeholder="password" />
+            </div>
+            <div class="form-error bg-danger border d-none" id="signup-error">Only stud.noroff.no emails are allowed to register.</div>
+            <button class="p-2 bg-primary text-white text-uppercase h4 rounded-pill border-0 w-100">Sign up</button>
+            <div class="h4 m-0 mt-2 p-0 text-white d-none" id="register-success">
+              <p class="text-center">Thank you for signing up! You can now login to connect, share, and celebrate with fellow pet lovers!</p>
+            </div>
+          </form>
+        </div>
+      </section>
     </main>
     <script src="js/index.js" type="module"></script>
   </body>
