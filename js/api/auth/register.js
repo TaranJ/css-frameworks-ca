@@ -15,6 +15,7 @@ export async function register(name, email, password) {
   if (response.ok) {
     document.getElementById("registerForm").reset();
     registerOK.classList.remove("d-none");
+    errSignup.classList.add("d-none");
     return await response.json();
   } else if (response.status === 400) {
     errSignup.classList.remove("d-none");
