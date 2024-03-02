@@ -25,5 +25,5 @@ export async function deletePost(postId) {
 }
 
 // Usage example:
-const postIdToDelete = "697"; // Replace with the ID of the post you want to delete
+const postIdToDelete = "702"; // Replace with the ID of the post you want to delete
 // deletePost(postIdToDelete);

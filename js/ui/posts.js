@@ -12,7 +12,7 @@ export async function displayPosts() {
   } catch {}
 }
 
-function createHTML(posts) {
+export function createHTML(posts) {
   console.log(posts.created);
 
   posts.forEach((posts) => {

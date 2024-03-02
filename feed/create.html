@@ -29,35 +29,31 @@
         <!-- search and new post -->
         <div class="ms-auto pe-3 pe-sm-0 d-flex gap-2 gap-sm-4 align-items-center">
           <div class="input-group">
-            <input
-              type="search"
-              class="form-control rounded-pill ps-4 ms-1"
-              id="search-input"
-              placeholder="search"
-              style="background-color: #dbe9cb"
-            />
+            <input type="search" class="form-control rounded-pill ps-4 ms-1" placeholder="search" style="background-color: #dbe9cb" />
             <span class="input-group-text bg-transparent border-0 position-absolute start-0 align-self-center">
               <i class="fas fa-search" style="color: #616161"></i>
             </span>
           </div>
-          <a href="create.html"> <i class="far fa-square-plus fa-2x text-white"></i></a>
+          <i class="far fa-square-plus fa-2x text-white"></i>
           <i class="fa-solid fa-user fa-xl text-white"></i>
         </div>
       </nav>
     </header>
     <main class="flex-grow-1">
-      <section class="container pt-2">
-        <!-- dropdown for sorting -->
-        <div class="row dropdown">
-          <button class="dropdown-toggle border-0 bg-white text-start" type="button" data-bs-toggle="dropdown" aria-expanded="false">Newest</button>
-          <ul class="dropdown-menu border-green">
-            <li class="dropdown-item">Trending</li>
-          </ul>
-          <hr class="text-green" />
+      <form class="row gap-4 justify-content-center p-0 pb-5 m-5" id="loginForm">
+        <!-- username -->
+        <div class="row justify-content-center p-0">
+          <input type="text" class="col-lg-4 p-2 opacity-50" id="username" name="email" required placeholder="email or username" />
         </div>
-        <!-- posts -->
-        <div class="posts-container row justify-content-start pb-5 pt-4"></div>
-      </section>
+        <!-- password -->
+        <div class="row justify-content-center p-0">
+          <input type="password" class="col-lg-4 p-2 opacity-50" id="password" name="password" required minlength="8" placeholder="password" />
+        </div>
+        <div class="row justify-content-center p-0 d-none" id="login-error">
+          <div class="form-error bg-danger border col-lg-4">Invalid username or password. Please try again.</div>
+        </div>
+        <button class="p-2 bg-primary text-white text-uppercase h4 rounded-pill border-0 col-lg-4">Create</button>
+      </form>
     </main>
     <footer class="bg-secondary p-4"></footer>
     <script src="../js/feed.js" type="module"></script>
