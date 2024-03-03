@@ -8,11 +8,11 @@ export async function displayPosts() {
     const posts = result.data;
     console.log(posts);
 
-    createHTML(posts);
+    createHTMLPosts(posts);
   } catch {}
 }
 
-export function createHTML(posts) {
+export function createHTMLPosts(posts) {
   console.log(posts.created);
 
   posts.forEach((posts) => {

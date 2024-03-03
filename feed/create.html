@@ -35,27 +35,47 @@
             </span>
           </div>
           <i class="far fa-square-plus fa-2x text-white"></i>
-          <i class="fa-solid fa-user fa-xl text-white"></i>
+          <div class="profile-pic dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-user fa-xl text-white"></i>
+            <ul class="dropdown-menu border-green">
+              <li><a href="/index.html" class="dropdown-item">Sign out</a></li>
+            </ul>
+          </div>
         </div>
       </nav>
     </header>
     <main class="flex-grow-1">
-      <form class="row gap-4 justify-content-center p-0 pb-5 m-5" id="loginForm">
-        <!-- username -->
-        <div class="row justify-content-center p-0">
-          <input type="text" class="col-lg-4 p-2 opacity-50" id="username" name="email" required placeholder="email or username" />
-        </div>
-        <!-- password -->
-        <div class="row justify-content-center p-0">
-          <input type="password" class="col-lg-4 p-2 opacity-50" id="password" name="password" required minlength="8" placeholder="password" />
-        </div>
-        <div class="row justify-content-center p-0 d-none" id="login-error">
-          <div class="form-error bg-danger border col-lg-4">Invalid username or password. Please try again.</div>
-        </div>
-        <button class="p-2 bg-primary text-white text-uppercase h4 rounded-pill border-0 col-lg-4">Create</button>
-      </form>
+      <section class="justify-content-center d-flex">
+        <form class="row gap-4 col-lg-4 justify-content-center p-0 pb-5 m-5" id="createPost">
+          <!-- title -->
+          <div class="row justify-content-center p-0">
+            <label for="title" class="p-0">Title</label>
+            <input type="text" class="p-2 opacity-50" id="title" name="title" required placeholder="title" />
+          </div>
+          <!-- image upload -->
+          <div class="row justify-content-center p-0">
+            <label for="new-image" class="p-0">Choose and image to upload</label>
+            <input type="file" class="p-2 opacity-50" id="new-image" name="new-image" />
+          </div>
+          <!-- description -->
+          <div class="row justify-content-center p-0">
+            <label for="description" class="p-0">Write a description</label>
+            <textarea type="text" class="p-2 opacity-50" id="description" name="description"></textarea>
+          </div>
+          <!-- tags -->
+          <div class="row justify-content-center p-0">
+            <label for="tags" class="p-0">Add tags to your post</label>
+            <input type="text" class="p-2 opacity-50" id="tags" name="tags" placeholder="add tags" />
+          </div>
+
+          <div class="row justify-content-center p-0 d-none" id="login-error">
+            <div class="form-error bg-danger border">Invalid username or password. Please try again.</div>
+          </div>
+          <button class="p-2 bg-primary text-white text-uppercase h4 rounded-pill border-0">Post</button>
+        </form>
+      </section>
     </main>
     <footer class="bg-secondary p-4"></footer>
-    <script src="../js/feed.js" type="module"></script>
+    <script src="../js/create.js" type="module"></script>
   </body>
 </html>
