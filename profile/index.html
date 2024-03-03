@@ -29,13 +29,24 @@
         <!-- search and new post -->
         <div class="ms-auto pe-3 pe-sm-0 d-flex gap-2 gap-sm-4 align-items-center">
           <div class="input-group">
-            <input type="search" class="form-control rounded-pill ps-4 ms-1" placeholder="search" style="background-color: #dbe9cb" />
+            <input
+              type="search"
+              class="form-control rounded-pill ps-4 ms-1"
+              id="search-input"
+              placeholder="search"
+              style="background-color: #dbe9cb"
+            />
             <span class="input-group-text bg-transparent border-0 position-absolute start-0 align-self-center">
               <i class="fas fa-search" style="color: #616161"></i>
             </span>
           </div>
-          <i class="far fa-square-plus fa-2x text-white"></i>
-          <i class="fa-solid fa-user fa-xl text-white"></i>
+          <a href="../feed/create.html"> <i class="far fa-square-plus fa-2x text-white"></i></a>
+          <div class="profile-pic dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-user fa-xl text-white"></i>
+            <ul class="dropdown-menu border-green">
+              <li><a class="dropdown-item sign-out-link" href="/index.html">Sign out</a></li>
+            </ul>
+          </div>
         </div>
       </nav>
     </header>

@@ -22,12 +22,12 @@ export function createHTMLPosts(posts) {
       postsContainer.innerHTML += `<div class="post mb-sm-4">
     <div class="row mb-2 w-100">
       <div class="col-2 col-lg-3 col-xl-2 align-self-center">
-        <a href="../profile/index.html" class="container ps-2">
+        <div class="container ps-2">
           <img src="${posts.author.avatar.url}" alt="profile picture" class="profile-thumbnail rounded-circle" />
-        </a>
+        </div>
       </div>
       <div class="col-10 col-lg-9 col-xl-10 fs-7">
-        <a href="../profile/index.html" class="container p-0 fw-bold text-decoration-none text-black"> ${posts.author.name} ${posts.id} </a>
+        <div class="container p-0 fw-bold text-decoration-none text-black"> ${posts.author.name} ${posts.id} </div>
         <p class="text-light mb-0">${date}</p>
       </div>
     </div>
