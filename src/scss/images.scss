@@ -12,6 +12,14 @@
   @extend .border-dark;
 }
 
+.profile-thumbnail-lg {
+  object-fit: cover;
+  height: 50px;
+  width: 50px;
+  @extend .border;
+  @extend .border-dark;
+}
+
 .post-thumbnail {
   object-fit: cover;
   height: 200px;

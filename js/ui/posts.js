@@ -19,7 +19,7 @@ export function createHTMLPosts(posts) {
     const newDate = new Date(posts.created);
     const date = newDate.toLocaleDateString("en-GB");
     if (posts.media) {
-      postsContainer.innerHTML += `<div class="post mb-sm-4">
+      postsContainer.innerHTML += `<a href="post.html?id=${posts.id}" class="post text-decoration-none mb-sm-4">
     <div class="row mb-2 w-100">
       <div class="col-2 col-lg-3 col-xl-2 align-self-center">
         <div class="container ps-2">
@@ -27,7 +27,7 @@ export function createHTMLPosts(posts) {
         </div>
       </div>
       <div class="col-10 col-lg-9 col-xl-10 fs-7">
-        <div class="container p-0 fw-bold text-decoration-none text-black"> ${posts.author.name} ${posts.id} </div>
+        <div class="container p-0 fw-bold text-black"> ${posts.author.name} </div>
         <p class="text-light mb-0">${date}</p>
       </div>
     </div>
@@ -36,7 +36,7 @@ export function createHTMLPosts(posts) {
       <i class="fa-solid fa-ellipsis"></i>
       <i class="fa-regular fa-heart"></i>
     </div>
-  </div>`;
+  </a>`;
     }
   });
 }

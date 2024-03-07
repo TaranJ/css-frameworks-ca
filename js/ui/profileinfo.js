@@ -14,6 +14,7 @@ export async function displayIcon() {
   }
 }
 
+// function to fetch information about hammy_boi from API
 // export async function getProfile() {
 //   const response = await fetch(APIBase + "/social/profiles/hammy_boi", {
 //     headers: {

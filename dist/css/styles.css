@@ -11,6 +11,12 @@
   width: 35px;
 }
 
+.profile-thumbnail-lg {
+  object-fit: cover;
+  height: 50px;
+  width: 50px;
+}
+
 .post-thumbnail {
   object-fit: cover;
   height: 200px;
@@ -7431,7 +7437,7 @@ textarea.form-control-lg {
   transform: translateY(-50%) !important;
 }
 
-.border, .profile-thumbnail {
+.border, .profile-thumbnail, .profile-thumbnail-lg {
   border: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
 }
 
@@ -7506,7 +7512,7 @@ textarea.form-control-lg {
   border-color: rgba(var(--bs-light-rgb), var(--bs-border-opacity)) !important;
 }
 
-.border-dark, .profile-thumbnail {
+.border-dark, .profile-thumbnail, .profile-thumbnail-lg {
   --bs-border-opacity: 1;
   border-color: rgba(var(--bs-dark-rgb), var(--bs-border-opacity)) !important;
 }
