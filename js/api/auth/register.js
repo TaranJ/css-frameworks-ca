@@ -32,10 +32,6 @@ export async function onRegister(event) {
   const password = event.target.password.value;
 
   await register(name, email, password);
-  console.log("hi");
-
-  const posts = await getPosts();
-  console.log(posts);
 }
 
 export function setRegisterListener() {

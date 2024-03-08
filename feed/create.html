@@ -50,17 +50,17 @@
           <!-- title -->
           <div class="row justify-content-center p-0">
             <label for="title" class="p-0">Title</label>
-            <input type="text" class="p-2 opacity-50" id="title" name="title" required placeholder="title" />
+            <input type="text" class="p-2 opacity-50" id="title" name="title" required placeholder="title" maxlength="50" />
           </div>
           <!-- image upload -->
           <div class="row justify-content-center p-0">
-            <label for="new-image" class="p-0">Choose and image to upload</label>
-            <input type="file" class="p-2 opacity-50" id="new-image" name="new-image" required />
+            <label for="new-image" class="p-0">Provide a link to your image</label>
+            <input type="url" class="p-2 opacity-50" id="new-image" name="new-image" required />
           </div>
-          <!-- description -->
+          <!-- description, max 280 -->
           <div class="row justify-content-center p-0">
             <label for="description" class="p-0">Write a description</label>
-            <textarea type="text" class="p-2 opacity-50" id="description" name="description"></textarea>
+            <textarea type="text" class="p-2 opacity-50" id="description" name="description" maxlength="280" rows="5"></textarea>
           </div>
           <!-- tags -->
           <div class="row justify-content-center p-0">
@@ -71,7 +71,11 @@
           <div class="row justify-content-center p-0 d-none" id="login-error">
             <div class="form-error bg-danger border">Invalid username or password. Please try again.</div>
           </div>
-          <button class="p-2 bg-primary text-white text-uppercase h4 rounded-pill border-0">Post</button>
+          <button class="p-2 bg-primary text-white text-uppercase h4 rounded-pill border-0" id="upload-btn">Upload post</button>
+          <div class="form-error bg-danger border d-none" id="create-post-error">
+            Something went wrong ˙◠˙ <br />
+            Please try again later!
+          </div>
         </form>
       </section>
     </main>

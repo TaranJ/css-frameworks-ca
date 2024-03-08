@@ -1,5 +1,5 @@
 import { load } from "../storage/load.js";
-import { postForm } from "../ui/constants.js";
+import { uploadErr } from "../ui/constants.js";
 import { APIBase, APIKey, postsURL } from "./constants.js";
 
 export async function createPost(postData) {
@@ -37,8 +37,6 @@ export const newPostData = {
   tags: [""],
 };
 
-// createPost(newPostData);
-
 // Function to handle form submission
 export async function handlePostCreation(event) {
   event.preventDefault(); // Prevent the default form submission behavior
@@ -57,13 +55,20 @@ export async function handlePostCreation(event) {
   newPostData.body = postDescription;
   newPostData.tags = postTags;
 
+  console.log("the button responds");
+
   try {
     await createPost(newPostData);
-  } catch (error) {}
+    window.location.href = "/feed/index.html";
+  } catch (error) {
+    uploadErr.classList.remove("d-none");
+    console.error(error);
+  }
 
   // Log the populated newPostData object
   console.log(newPostData);
 }
 
-// Add event listener to form submit event
-postForm.addEventListener("submit", handlePostCreation);
+export function setUploadListener() {
+  document.getElementById("createPost").addEventListener("submit", handlePostCreation);
+}

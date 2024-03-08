@@ -25,6 +25,11 @@
   height: 200px;
 }
 
+.post-page-img {
+  object-fit: cover;
+  max-height: 1000px;
+}
+
 @media (max-width: 575px) {
   .post-thumbnail {
     height: auto;

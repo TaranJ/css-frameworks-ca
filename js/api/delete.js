@@ -1,5 +1,7 @@
 import { load } from "../storage/load.js";
+import { delBtn } from "../ui/constants.js";
 import { APIBase, APIKey, postsURL } from "./constants.js";
+import { getSinglePost } from "./fetch.js";
 
 export async function deletePost(postId) {
   try {
@@ -24,6 +26,20 @@ export async function deletePost(postId) {
   }
 }
 
-// Usage example:
-const postIdToDelete = "702"; // Replace with the ID of the post you want to delete
-// deletePost(postIdToDelete);
+export async function handlePostDeletion(event) {
+  const result = await getSinglePost();
+  const postIDToDelete = result.data.id;
+
+  try {
+    await deletePost(postIDToDelete);
+    window.location.href = "/feed/index.html";
+  } catch (error) {
+    console.log("something is rotten in the state of denmark");
+  }
+
+  // Log the populated object
+  console.log(postIDToDelete);
+}
+
+// Add event listener to form submit event
+delBtn.addEventListener("click", handlePostDeletion);

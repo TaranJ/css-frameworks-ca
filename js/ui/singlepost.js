@@ -20,7 +20,7 @@ export function createHTMLPost(post) {
 
   postContainer.innerHTML += `<h1 class="p-2 p-sm-0 pt-sm-5 pb-sm-3 h3 text-uppercase">${post.title}</h1>
 
-<img src="${post.media.url}" alt="${post.media.alt}" class="w-100 p-0" />
+<img src="${post.media.url}" alt="${post.media.alt}" class="w-100 p-0 post-page-img" />
 
 <div class="d-flex justify-content-between p-2 pt-2 pb-5 p-sm-0 pt-sm-2 pb-sm-3">
     <p class="col-10 col-lg-9 col-xl-10 text-black mb-0"> Posted by ${post.author.name}, ${date} </p>
