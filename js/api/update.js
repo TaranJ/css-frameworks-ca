@@ -7,6 +7,7 @@ const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get("id");
 
+// function to test updating profile info. this is currently not used
 export async function updateProfile(postData) {
   try {
     const response = await fetch(APIBase + "/social/profiles/silver", {
@@ -32,6 +33,7 @@ export async function updateProfile(postData) {
   }
 }
 
+// example of data to pass into updateProfile
 export const newProfile = {
   avatar: {
     url: "https://images.unsplash.com/photo-1532022160153-7735cd049992?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
