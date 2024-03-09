@@ -45,7 +45,7 @@ export function createHTMLForProfilePosts(posts) {
     const newDate = new Date(posts.created);
     const date = newDate.toLocaleDateString("en-GB");
     if (posts.media) {
-      profilePostsContainer.innerHTML += `<a href="post.html?id=${posts.id}" class="post text-decoration-none mb-sm-4">
+      profilePostsContainer.innerHTML += `<a href="/feed/post.html?id=${posts.id}" class="post text-decoration-none mb-sm-4">
     <div class="row mb-2 w-100">
       <div class="col-2 col-lg-3 col-xl-2 align-self-center">
         <div class="container ps-2">

@@ -34,23 +34,3 @@ export function createHTMLForProfile(profile) {
   `;
   }
 }
-
-/* <section class="container d-flex flex-column align-items-center pt-3 pt-sm-5">
-        <img src="/images/hamster-5964167_1280.jpg" alt="profile picture" class="profile-main rounded-circle w-100" />
-        <h1 class="mb-0 mt-sm-3">hammy_boi</h1>
-        <p class="text-lowercase p-0 text-light">Member since 23. jan 2023</p>
-      </section> */
-
-// function to fetch information about current profile from API
-// export async function getProfile() {
-//   const response = await fetch(APIBase + "/social/profiles/hammy_boi", {
-//     headers: {
-//       Authorization: `Bearer ${load("token")}`,
-//       "X-Noroff-API-Key": APIKey,
-//     },
-//   });
-
-//   const profile = await response.json();
-//   console.log(profile);
-// }
-// getProfile();
