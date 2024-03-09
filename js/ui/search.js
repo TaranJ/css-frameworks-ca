@@ -31,7 +31,7 @@ export async function searchPosts(query) {
   }
 }
 
-function clearPreviousPosts() {
+export function clearPreviousPosts() {
   // Clear the container by setting its innerHTML to an empty string
   postsContainer.innerHTML = "";
 }
