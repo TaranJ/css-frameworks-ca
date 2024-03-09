@@ -5,6 +5,14 @@ import { editBtn, updateForm } from "./constants.js";
 
 const editContainer = document.getElementById("edit-container");
 
+/**
+ * Checks if the current user is the author of the post and shows the edit section accordingly.
+ * Retrieves the user profile and the single post data.
+ * Compares the author of the post with the current user.
+ * If the current user is the author, displays the edit section.
+ * @async
+ * @returns {Promise<void>} A Promise that resolves after showing the edit section.
+ */
 export async function showEditSection() {
   const profile = load("profile");
   getSinglePost();
@@ -16,6 +24,10 @@ export async function showEditSection() {
   }
 }
 
+/**
+ * Populates the editor with data from a single post for updating.
+ * Retrieves data of a single post and fills the editor form fields with that data.
+ */
 async function populateEditor() {
   try {
     const results = await getSinglePost();
@@ -40,4 +52,5 @@ function openEditor() {
   updateForm.addEventListener("submit", handlePostUpdate);
 }
 
+// Add event listener to the edit button to open the editor
 editBtn.addEventListener("click", openEditor);

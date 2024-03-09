@@ -4,7 +4,8 @@ import { newestPosts, topPosts } from "./constants.js";
 import { createHTMLForProfilePosts, createHTMLPosts } from "./posts.js";
 import { clearPreviousPosts } from "./search.js";
 
-export async function sortByReactions(posts) {
+// Fetches posts and sorts them by the number of reactions in descending order.
+export async function sortByReactions() {
   try {
     const result = await getPosts();
     const posts = result.data;
@@ -22,27 +23,39 @@ export async function sortByReactions(posts) {
     return sortedPosts;
   } catch (error) {
     console.error("Error searching posts:", error);
+    throw error;
   }
 }
 
 export function handleTopPostLink() {
-  // Add a click event listener to the "Sign out" link
+  // Add a click event listener to the "Top Posts" link
   topPosts.addEventListener("click", function (event) {
+    //     prevents the default link behavior and calls the `sortByReactions` function to sort and display posts by the number of reactions
     event.preventDefault();
-    // Navigate to the URL specified in the link's href attribute
     sortByReactions();
   });
 }
 
 export function handleNewestLink() {
-  // Add a click event listener to the "Sign out" link
+  // Add a click event listener to the "newest" link
   newestPosts.addEventListener("click", function (event) {
     event.preventDefault();
-    // Navigate to the URL specified in the link's href attribute
+    // reloads the window. posts are sorted by date by default
     window.location.reload();
   });
 }
 
+/**
+ * Filters posts by a specific profile name and displays them.
+ * This function fetches all posts, then filters them based on the given profile name,
+ * which is matched against the author names of the posts. It assumes the current user's
+ * profile name is to be used for filtering. The filtered posts are then displayed using
+ * a dedicated function.
+ *
+ * Note: This function retrieves the current user's profile from local storage to
+ * determine the profile name for filtering. If no profile is found in local storage,
+ * it logs an error and exits without filtering.
+ */
 export async function filterByProfile(profileName) {
   try {
     const result = await getPosts();

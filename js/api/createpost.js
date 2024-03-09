@@ -2,6 +2,14 @@ import { load } from "../storage/load.js";
 import { uploadErr } from "../ui/constants.js";
 import { APIBase, APIKey, postsURL } from "./constants.js";
 
+/**
+ * Creates a new post by sending a POST request to the server.
+ * @async
+ * @param {object} postData - The data for the new post.
+ * @returns {Promise<object>} A Promise that resolves with the response data
+ * from the server upon successful creation of the post.
+ * @throws {Error} If the request fails or an error occurs during processing.
+ */
 export async function createPost(postData) {
   try {
     const response = await fetch(APIBase + postsURL, {
@@ -20,18 +28,18 @@ export async function createPost(postData) {
 
     const responseData = await response.json();
     console.log("Post created successfully:", responseData);
-    return responseData; // Optionally, return the response data
+    return responseData;
   } catch (error) {
     console.error("Error creating post:", error.message);
-    throw error; // Re-throw the error to propagate it further if needed
+    throw error;
   }
 }
 
 // Usage example:
 export const newPostData = {
-  title: "hammy",
+  title: "",
   media: {
-    url: "https://facts.net/wp-content/uploads/2021/04/hamster-in-a-basket.jpg",
+    url: "",
   },
   body: "",
   tags: [""],
@@ -41,9 +49,11 @@ export const newPostData = {
 export async function handlePostCreation(event) {
   event.preventDefault(); // Prevent the default form submission behavior
 
+  // Retrieves values from input elements
   const postTitle = document.getElementById("title").value;
   const mediaUrl = document.getElementById("new-image").value;
   const postDescription = document.getElementById("description").value;
+  // Retrieves the value of the tags input element and splits it into an array of tags
   const postTags = document
     .getElementById("tags")
     .value.split(",")
@@ -55,8 +65,6 @@ export async function handlePostCreation(event) {
   newPostData.body = postDescription;
   newPostData.tags = postTags;
 
-  console.log("the button responds");
-
   try {
     await createPost(newPostData);
     window.location.href = "/feed/index.html";
@@ -64,11 +72,9 @@ export async function handlePostCreation(event) {
     uploadErr.classList.remove("d-none");
     console.error(error);
   }
-
-  // Log the populated newPostData object
-  console.log(newPostData);
 }
 
+// Adds an event listener to the form with the ID "createPost" to handle post creation.
 export function setUploadListener() {
   document.getElementById("createPost").addEventListener("submit", handlePostCreation);
 }

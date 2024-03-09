@@ -1,8 +1,16 @@
 import { getPosts } from "../api/fetch.js";
 import { profilePostsContainer } from "./constants.js";
+import { clearPreviousPosts, searchPosts } from "./search.js";
 
 export const postsContainer = document.querySelector(".posts-container");
 
+/**
+ * Fetches and displays posts. It also checks for a search query in the URL parameters,
+ * and if found, filters the displayed posts by this query.
+ * @async
+ * @returns {Promise<void>} A Promise that resolves once posts have been fetched and displayed,
+ * or filtered and displayed based on a search query.
+ */
 export async function displayPosts() {
   try {
     const result = await getPosts();
@@ -10,9 +18,30 @@ export async function displayPosts() {
     console.log(posts);
 
     createHTMLPosts(posts);
-  } catch {}
+
+    // Retrieve the search query from the URL parameter
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const query = urlParams.get("query");
+
+    // If a search query exists, filter the posts
+    if (query) {
+      clearPreviousPosts();
+      searchPosts(query);
+    }
+  } catch (error) {
+    console.error("Error displaying posts:", error);
+  }
 }
 
+/**
+ * Generates and appends HTML content for each post in the provided array.
+ * This function iterates through each post, formats the creation date, checks for media presence,
+ * and constructs an HTML string that is then appended to the `postsContainer` element.
+ * @param {Array} posts - An array of post objects to be displayed. Each post object should contain
+ * necessary information such as the author's name, avatar URL, post creation date, and optionally media
+ * with a URL and alt text.
+ */
 export function createHTMLPosts(posts) {
   posts.forEach((posts) => {
     const newDate = new Date(posts.created);
@@ -40,6 +69,7 @@ export function createHTMLPosts(posts) {
   });
 }
 
+// Dynamically generates and appends HTML for each post in the provided array to the `profilePostsContainer` on the profile page.
 export function createHTMLForProfilePosts(posts) {
   posts.forEach((posts) => {
     const newDate = new Date(posts.created);

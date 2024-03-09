@@ -40,6 +40,14 @@ export const newProfile = {
   },
 };
 
+/**
+ * Updates a post on the server.
+ * @async
+ * @param {object} postData - The updated data for the post.
+ * @returns {Promise<object>} A Promise that resolves with the response data
+ * from the server upon successful update of the post.
+ * @throws {Error} If the request fails or an error occurs during processing.
+ */
 export async function updatePost(postData) {
   try {
     const response = await fetch(APIBase + postsURL + "/" + id, {
@@ -58,16 +66,17 @@ export async function updatePost(postData) {
 
     const responseData = await response.json();
     console.log("Post updated successfully:", responseData);
-    return responseData; // Optionally, return the response data
+    return responseData;
   } catch (error) {
     console.error("Error updating post:", error.message);
-    throw error; // Re-throw the error to propagate it further if needed
+    throw error;
   }
 }
 
 export async function handlePostUpdate(event) {
   event.preventDefault(); // Prevent the default form submission behavior
 
+  // Retrieves values from input elements
   const postTitle = document.getElementById("update-title").value;
   const mediaUrl = document.getElementById("update-image").value;
   const postDescription = document.getElementById("update-description").value;
@@ -87,6 +96,7 @@ export async function handlePostUpdate(event) {
     // Reload the current page
     window.location.reload();
   } catch (error) {
+    // shows error message to the user
     uploadErr.classList.remove("d-none");
     console.error(error);
   }

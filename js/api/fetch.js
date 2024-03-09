@@ -32,6 +32,7 @@ export async function getPosts() {
 
 export { posts };
 
+// Fetches a single post from the API
 export async function getSinglePost() {
   try {
     const response = await fetch(APIBase + postsURL + "/" + id + "?_author=true", {

@@ -2,7 +2,12 @@ import { getPosts } from "../api/fetch.js";
 import { searchField } from "./constants.js";
 import { createHTMLPosts, postsContainer } from "./posts.js";
 
-// Function to search through posts
+/**
+ * This function retrieves all posts, filters them based on the search query (matching title, body, username, and tags)
+ *
+ * @param {string} query - The search query to filter posts.
+ * @throws {Error} When there is an issue retrieving posts or updating the DOM.
+ */
 export async function searchPosts(query) {
   try {
     const result = await getPosts();
@@ -20,7 +25,6 @@ export async function searchPosts(query) {
       return false;
     });
 
-    console.log(filteredPosts);
     // Clear previous posts from the DOM
     clearPreviousPosts();
 
@@ -28,19 +32,35 @@ export async function searchPosts(query) {
     createHTMLPosts(filteredPosts);
   } catch (error) {
     console.error("Error searching posts:", error);
+    throw error;
   }
 }
 
+// Clear the container by setting its innerHTML to an empty string
 export function clearPreviousPosts() {
-  // Clear the container by setting its innerHTML to an empty string
   postsContainer.innerHTML = "";
 }
 
-// Event listener for input change in search bar
+/**
+ * Attaches event listeners to the search field based on the current page.
+ * If the current page is the feed index page, it listens for input changes in the search field
+ * and triggers a search for posts based on the entered query. If the current page is not the feed index page,
+ * it listens for keydown events and if the Enter key is pressed, it redirects to the feed index page
+ * with the search query appended to the URL.
+ */
 export function attachSearchEventListener() {
-  searchField.addEventListener("input", function () {
-    const query = this.value.trim();
-    searchPosts(query);
-    console.log("button works");
-  });
+  if (window.location.pathname === "/feed/index.html") {
+    searchField.addEventListener("input", function () {
+      const query = this.value.trim();
+      searchPosts(query);
+      console.log("Search executed for:", query);
+    });
+  } else {
+    searchField.addEventListener("keydown", function (event) {
+      if (event.key === "Enter") {
+        const query = this.value.trim();
+        window.location.href = `/feed/index.html?query=${encodeURIComponent(query)}`;
+      }
+    });
+  }
 }

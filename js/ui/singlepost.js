@@ -2,6 +2,14 @@ import { getSinglePost } from "../api/fetch.js";
 
 const postContainer = document.querySelector(".post-container");
 
+/**
+ * Displays a single post on the page.
+ * This function retrieves a single post using the `getSinglePost` function,
+ * then creates and inserts HTML content representing the post into the DOM using the `createHTMLPost` function.
+ *
+ * @async
+ * @throws {Error} If there is an issue retrieving the post or updating the DOM.
+ */
 export async function displayPost() {
   try {
     const result = await getSinglePost();
@@ -11,9 +19,14 @@ export async function displayPost() {
     createHTMLPost(post);
   } catch (error) {
     console.error("Failed to display post:", error);
+    throw error;
   }
 }
 
+/**
+ * Generates HTML content to display a single post on the page.
+ * Inserts the post's title, media, author name, creation date, body, and interaction icons into the designated post container element.
+ */
 export function createHTMLPost(post) {
   const newDate = new Date(post.created);
   const date = newDate.toLocaleDateString("en-GB");
