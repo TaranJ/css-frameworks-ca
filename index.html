@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Pawfinity: Your pet's social playground! Connect, share, and celebrate with fellow pet lovers. The perfect space for wagging tails and endless smiles. Join the fun now!"
+      content="Log in to Pawfinity and access your pet's social playground! Connect with other pet lovers, share moments, and explore a world of wagging tails and endless smiles."
     />
+
     <title>Pawfinity | login</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -37,7 +38,7 @@
           <div class="row justify-content-center p-0 d-none" id="login-error">
             <div class="form-error bg-danger border col-lg-4">Invalid username or password. Please try again.</div>
           </div>
-          <button class="p-2 bg-primary text-white text-uppercase h4 rounded-pill border-0 col-lg-4">Login</button>
+          <button class="p-2 bg-primary text-white text-uppercase h4 rounded-pill border-0 col-lg-4" id="login-button">Login</button>
         </form>
         <!-- separator -->
         <div class="row text-white text-uppercase justify-content-center pt-5">
@@ -74,7 +75,7 @@
               <input type="password" class="col p-2" id="signup-password" required minlength="8" name="password" placeholder="password" />
             </div>
             <div class="form-error bg-danger border d-none" id="signup-error">Only emails ending with @noroff.no are allowed to register.</div>
-            <button class="p-2 bg-primary text-white text-uppercase h4 rounded-pill border-0 w-100">Sign up</button>
+            <button class="p-2 bg-primary text-white text-uppercase h4 rounded-pill border-0 w-100" id="signup-form-button">Sign up</button>
             <div class="h4 m-0 mt-2 p-0 text-white d-none" id="register-success">
               <p class="text-center">Thank you for signing up! You can now login to connect, share, and celebrate with fellow pet lovers!</p>
             </div>

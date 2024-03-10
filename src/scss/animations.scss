@@ -1,0 +1,26 @@
+#login-button:hover,
+#signup-form-button:hover,
+#edit-btn:hover,
+#update-btn:hover {
+  background-color: $secondary !important;
+  font-weight: bolder;
+}
+
+#signup-button:hover {
+  background-color: $primary !important;
+  font-weight: bolder;
+}
+
+#delete-btn:hover {
+  background-color: #b84e4e !important;
+  font-weight: bolder;
+}
+
+.fa-square-plus:hover {
+  font-weight: bold;
+}
+
+#search-input:focus,
+#search-input:hover {
+  border: solid 2px;
+}

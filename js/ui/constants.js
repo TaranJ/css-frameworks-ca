@@ -15,3 +15,4 @@ export const topPosts = document.getElementById("top-posts");
 export const newestPosts = document.getElementById("newest-posts");
 export const profileContainer = document.querySelector(".profile-info");
 export const profilePostsContainer = document.querySelector(".profile-posts");
+export const meta = document.querySelector('meta[name="description"]');

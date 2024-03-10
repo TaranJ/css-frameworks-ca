@@ -1,4 +1,5 @@
 import { getSinglePost } from "../api/fetch.js";
+import { meta } from "./constants.js";
 
 const postContainer = document.querySelector(".post-container");
 
@@ -30,6 +31,8 @@ export async function displayPost() {
 export function createHTMLPost(post) {
   const newDate = new Date(post.created);
   const date = newDate.toLocaleDateString("en-GB");
+
+  meta.content = ` Check out ${post.author.name}'s latest post on Pawfinity: ${post.title}. Connect, share, and celebrate with fellow pet lovers. The perfect space for wagging tails and endless smiles. Join the fun now!`;
 
   postContainer.innerHTML += `<h1 class="p-2 p-sm-0 pt-sm-5 pb-sm-3 h3 text-uppercase">${post.title}</h1>
 

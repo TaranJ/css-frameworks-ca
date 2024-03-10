@@ -1,5 +1,5 @@
 import { load } from "../storage/load.js";
-import { profileContainer, profilePic } from "./constants.js";
+import { meta, profileContainer, profilePic } from "./constants.js";
 
 /**
  * Dynamically updates the UI to display the user's profile picture and a dropdown menu.
@@ -39,6 +39,9 @@ export async function displayProfile() {
  * @param {object} profile - The user's profile data containing name, avatar URL, and optionally bio.
  */
 export function createHTMLForProfile(profile) {
+  meta.content = `${profile.name}'s profile on Pawfinity. Connect with ${profile.name} and explore their posts and activity. Share your pet stories and join the community today!
+`;
+
   if (profile.bio) {
     profileContainer.innerHTML += `<img src="${profile.avatar.url}" alt="profile picture" class="profile-main rounded-circle" />
   <h1 class="mb-0 mt-sm-3">${profile.name}</h1>

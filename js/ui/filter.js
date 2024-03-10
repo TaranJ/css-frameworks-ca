@@ -1,7 +1,7 @@
 import { getPosts } from "../api/fetch.js";
 import { load } from "../storage/load.js";
 import { newestPosts, topPosts } from "./constants.js";
-import { createHTMLForProfilePosts, createHTMLPosts } from "./posts.js";
+import { createHTMLForProfilePosts, createHTMLPosts, displayPosts } from "./posts.js";
 import { clearPreviousPosts } from "./search.js";
 
 // Fetches posts and sorts them by the number of reactions in descending order.
@@ -40,8 +40,10 @@ export function handleNewestLink() {
   // Add a click event listener to the "newest" link
   newestPosts.addEventListener("click", function (event) {
     event.preventDefault();
-    // reloads the window. posts are sorted by date by default
-    window.location.reload();
+    const locationURL = new URL(window.location.href);
+    locationURL.searchParams.delete("query"); // Remove the 'query' parameter
+    window.location.href = locationURL.toString(); // Update the URL
+    displayPosts(); // the posts are fetched from the API again and by default they display with the newest first
   });
 }
 
