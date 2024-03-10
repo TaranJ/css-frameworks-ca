@@ -1,5 +1,6 @@
 import { getPosts } from "../api/fetch.js";
-import { profilePostsContainer } from "./constants.js";
+import { loader, profilePostsContainer } from "./constants.js";
+import { displayError } from "./error.js";
 import { clearPreviousPosts, searchPosts } from "./search.js";
 
 export const postsContainer = document.querySelector(".posts-container");
@@ -15,8 +16,8 @@ export async function displayPosts() {
   try {
     const result = await getPosts();
     const posts = result.data;
-    console.log(posts);
 
+    loader.style.display = "none";
     createHTMLPosts(posts);
 
     // Retrieve the search query from the URL parameter
@@ -30,6 +31,8 @@ export async function displayPosts() {
       searchPosts(query);
     }
   } catch (error) {
+    loader.style.display = "none";
+    postsContainer.innerHTML += displayError(`Something went wrong ˙◠˙ <br> Please try again later!`);
     console.error("Error displaying posts:", error);
   }
 }

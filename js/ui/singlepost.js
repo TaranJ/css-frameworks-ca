@@ -1,5 +1,6 @@
 import { getSinglePost } from "../api/fetch.js";
-import { meta } from "./constants.js";
+import { loader, meta } from "./constants.js";
+import { displayError } from "./error.js";
 
 const postContainer = document.querySelector(".post-container");
 
@@ -15,10 +16,12 @@ export async function displayPost() {
   try {
     const result = await getSinglePost();
     const post = result.data;
-    console.log(post);
 
+    loader.style.display = "none";
     createHTMLPost(post);
   } catch (error) {
+    loader.style.display = "none";
+    postContainer.innerHTML += displayError(`Something went wrong ˙◠˙ <br> Please try again later!`);
     console.error("Failed to display post:", error);
     throw error;
   }

@@ -1,6 +1,7 @@
 import { getPosts } from "../api/fetch.js";
 import { load } from "../storage/load.js";
-import { newestPosts, topPosts } from "./constants.js";
+import { loader, newestPosts, profilePostsContainer, topPosts } from "./constants.js";
+import { displayError } from "./error.js";
 import { createHTMLForProfilePosts, createHTMLPosts, displayPosts } from "./posts.js";
 import { clearPreviousPosts } from "./search.js";
 
@@ -12,7 +13,6 @@ export async function sortByReactions() {
 
     // Sort the posts array based on the number of reactions in descending order
     const sortedPosts = posts.sort((a, b) => b._count.reactions - a._count.reactions);
-    console.log(sortedPosts);
 
     // Clear previous posts from the DOM
     clearPreviousPosts();
@@ -62,7 +62,6 @@ export async function filterByProfile(profileName) {
   try {
     const result = await getPosts();
     const posts = result.data;
-    console.log(posts);
 
     // Load profile information
     const profile = load("profile");
@@ -73,10 +72,12 @@ export async function filterByProfile(profileName) {
 
     // Filter posts based on the profile name
     const profilePosts = posts.filter((post) => post.author.name.toLowerCase().includes(profile.name.toLowerCase()));
-    console.log(profilePosts);
+    loader.style.display = "none";
     createHTMLForProfilePosts(profilePosts);
     return profilePosts;
   } catch (error) {
+    loader.style.display = "none";
+    profilePostsContainer.innerHTML += displayError(`Something went wrong ˙◠˙ <br> Please try again later!`);
     console.error("Error searching posts by profile name:", error);
   }
 }

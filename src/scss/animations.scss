@@ -24,3 +24,23 @@
 #search-input:hover {
   border: solid 2px;
 }
+
+.loader,
+.loader-sidebar {
+  border: 10px solid #e7e7e7;
+  border-top: 10px solid $secondary;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  animation: spin 1.5s linear infinite;
+  margin: 50px auto;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
