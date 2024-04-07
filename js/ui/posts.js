@@ -1,7 +1,7 @@
 import { getPosts } from "../api/fetch.js";
 import { loader, profilePostsContainer } from "./constants.js";
 import { displayError } from "./error.js";
-import { clearPreviousPosts, searchPosts } from "./search.js";
+import { searchPosts } from "./search.js";
 
 export const postsContainer = document.querySelector(".posts-container");
 
@@ -27,7 +27,6 @@ export async function displayPosts() {
 
     // If a search query exists, filter the posts
     if (query) {
-      clearPreviousPosts();
       searchPosts(query);
     }
   } catch (error) {

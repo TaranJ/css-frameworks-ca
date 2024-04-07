@@ -1,4 +1,12 @@
-export function handleSignOut() {
+import { displayIcon } from "./profileinfo.js";
+import { attachSearchEventListener } from "./search.js";
+
+/**
+ * Handles signing out when the "Sign out" link is clicked.
+ *
+ * @returns {void}
+ */
+function handleSignOut() {
   const signOutLink = document.querySelector(".sign-out-link");
 
   // Add a click event listener to the "Sign out" link
@@ -9,12 +17,27 @@ export function handleSignOut() {
   });
 }
 
-export function handleProfileLink() {
+/**
+ * Handles navigating to the user's profile when the "Your profile" link is clicked.
+ *
+ * @returns {void}
+ */
+function handleProfileLink() {
   const profileLink = document.querySelector(".profile-link");
-
-  // Add a click event listener to the "Your profile" link
   profileLink.addEventListener("click", function (event) {
     event.preventDefault();
     window.location.href = this.getAttribute("href");
   });
+}
+
+/**
+ * Handles navbar functionality by attaching event listeners and updating UI.
+ *
+ * @returns {void}
+ */
+export function handleNavbar() {
+  attachSearchEventListener();
+  displayIcon();
+  handleProfileLink();
+  handleSignOut();
 }
