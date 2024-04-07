@@ -1,6 +1,6 @@
 .profile-main {
-  max-width: 200px;
-  max-height: 200px;
+  width: 200px;
+  height: 200px;
   object-fit: cover;
 }
 
@@ -12,9 +12,22 @@
   @extend .border-dark;
 }
 
+.profile-thumbnail-lg {
+  object-fit: cover;
+  height: 50px;
+  width: 50px;
+  @extend .border;
+  @extend .border-dark;
+}
+
 .post-thumbnail {
   object-fit: cover;
   height: 200px;
+}
+
+.post-page-img {
+  object-fit: cover;
+  max-height: 1000px;
 }
 
 @media (max-width: 575px) {

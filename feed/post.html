@@ -52,22 +52,48 @@
     </header>
     <main class="flex-grow-1">
       <section class="container pt-2">
-        <!-- dropdown for sorting -->
-        <div class="row dropdown">
-          <button class="dropdown-toggle border-0 bg-white text-start" type="button" data-bs-toggle="dropdown" aria-expanded="false">Sort</button>
-          <ul class="dropdown-menu border-green">
-            <li class="dropdown-item" id="top-posts">Top posts</li>
-            <li class="dropdown-item" id="newest-posts">Newest</li>
-          </ul>
-
-          <hr class="text-green" />
-        </div>
-        <!-- posts -->
         <div class="loader"></div>
-        <div class="posts-container row justify-content-start pb-5 pt-4"></div>
+        <div class="post-container row justify-content-start pb-4 pt-2"></div>
+        <div class="edit-containers d-none row justify-content-between p-2 p-sm-0 pb-sm-5 pt-0" id="edit-container">
+          <button class="p-1 text-white bg-primary text-uppercase h5 rounded-pill border-0 col-4 col-md-2 col-xl-1" id="edit-btn">Edit</button>
+          <button class="p-1 text-white bg-danger text-uppercase h5 rounded-pill border-0 col-4 col-md-2 col-xl-1" id="delete-btn">Delete</button>
+        </div>
+        <section class="justify-content-center d-flex">
+          <form class="row gap-4 col-lg-6 justify-content-center p-0 pb-5 m-3 d-none" id="updatePost">
+            <!-- title -->
+            <div class="row justify-content-center p-0">
+              <label for="title" class="p-0">Title</label>
+              <input type="text" class="p-2 opacity-50" id="update-title" name="title" required placeholder="title" maxlength="50" />
+            </div>
+            <!-- image upload -->
+            <div class="row justify-content-center p-0">
+              <label for="new-image" class="p-0">Provide a link to your image</label>
+              <input type="url" class="p-2 opacity-50" id="update-image" name="new-image" required />
+            </div>
+            <!-- description, max 280 -->
+            <div class="row justify-content-center p-0">
+              <label for="description" class="p-0">Write a description</label>
+              <textarea type="text" class="p-2 opacity-50" id="update-description" name="description" maxlength="280" rows="5"></textarea>
+            </div>
+            <!-- tags -->
+            <div class="row justify-content-center p-0">
+              <label for="tags" class="p-0">Add tags to your post</label>
+              <input type="text" class="p-2 opacity-50" id="update-tags" name="tags" placeholder="add tags" />
+            </div>
+
+            <div class="row justify-content-center p-0 d-none" id="login-error">
+              <div class="form-error bg-danger border">Invalid username or password. Please try again.</div>
+            </div>
+            <button class="p-2 bg-primary text-white text-uppercase h4 rounded-pill border-0" id="update-btn">Update post</button>
+            <div class="form-error bg-danger border d-none" id="create-post-error">
+              Something went wrong ˙◠˙ <br />
+              Please try again later!
+            </div>
+          </form>
+        </section>
       </section>
     </main>
     <footer class="bg-secondary p-4"></footer>
-    <script src="../js/feed.js" type="module"></script>
+    <script src="../js/post.js" type="module"></script>
   </body>
 </html>
